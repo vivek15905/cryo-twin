@@ -55,7 +55,8 @@ loss = mean(residual**2)
 ### System Architecture
 The following diagram illustrates how the Physics Loss acts as a "teacher," correcting the network via backpropagation without needing ground-truth labels.
 
-```mermaidgraph LR
+```mermaid
+graph LR
     A["Input (x, t)"] --> B("Neural Network<br/>PINN")
     B --> C["Predicted Temp (u)"]
     
@@ -73,7 +74,6 @@ The following diagram illustrates how the Physics Loss acts as a "teacher," corr
     style A fill:#8e44ad,stroke:#fff,stroke-width:2px,color:#fff
     style G fill:#2c3e50,stroke:#fff,stroke-width:2px,color:#fff
     style H fill:#d35400,stroke:#fff,stroke-width:4px,color:#fff
-
 ```
 👤 About the Author
 Vivek Pendem, Mechanical Engineer & Researcher | Focus: AI for Science & Bioprinting Working at the intersection of high-performance computing, thermodynamics, and biological preservation.
