@@ -129,7 +129,9 @@ graph LR
     H -->|"Backprop"| B
 
     %% Link Styling
-    linkStyle default stroke:#bdc3c7,stroke-width:2px,color:#fff;
+    linkStyle default stroke:#bdc3c7,stroke-width:2px,color:#fff;```
+
 ```
+
 👤 About the Author
 Vivek Pendem, Mechanical Engineer & Researcher | Focus: AI for Science & Bioprinting Working at the intersection of high-performance computing, thermodynamics, and biological preservation.
