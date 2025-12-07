@@ -128,9 +128,8 @@ graph LR
     C -->|"Robin Boundary"| H
     H -->|"Backprop"| B
 
-    %% Link Styling
-    linkStyle default stroke:#bdc3c7,stroke-width:2px,color:#fff;```
-
+    %% Link Styling - Fixed hex code
+    linkStyle default stroke:#bdc3c7,stroke-width:2px,color:#333;
 ```
 
 👤 About the Author
