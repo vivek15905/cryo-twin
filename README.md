@@ -108,10 +108,12 @@ The model uses a **Deep Residual Network (ResNet)** with **SiLU** activations to
 
 ```mermaid
 graph LR
+    %% Define Styles
     classDef purpleNode fill:#8e44ad,stroke:#fff,stroke-width:2px,color:#fff;
     classDef blueNode fill:#2c3e50,stroke:#fff,stroke-width:2px,color:#fff;
     classDef orangeNode fill:#d35400,stroke:#fff,stroke-width:4px,color:#fff;
 
+    %% Nodes
     A["Input (x, y, t)"]:::purpleNode --> B("ResNet PINN<br/>(4 Blocks, SiLU)"):::blueNode
     B --> C["Predicted Temp (T)"]:::blueNode
     
@@ -126,8 +128,8 @@ graph LR
     C -->|"Robin Boundary"| H
     H -->|"Backprop"| B
 
+    %% Link Styling
     linkStyle default stroke:#bdc3c7,stroke-width:2px,color:#fff;
-
 ```
 👤 About the Author
 Vivek Pendem, Mechanical Engineer & Researcher | Focus: AI for Science & Bioprinting Working at the intersection of high-performance computing, thermodynamics, and biological preservation.
