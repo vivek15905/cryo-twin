@@ -75,5 +75,59 @@ graph LR
     style G fill:#2c3e50,stroke:#fff,stroke-width:2px,color:#fff
     style H fill:#d35400,stroke:#fff,stroke-width:4px,color:#fff
 ```
+# 🫀 In Silico Cryo-Twin: Heterogeneous Physics-Informed Neural Networks for Renal Cryopreservation
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0-orange)
+![Status](https://img.shields.io/badge/Status-Research%20Grade-purple)
+![Domain](https://img.shields.io/badge/Domain-AI4Science-green)
+
+### **The Problem: The Organ Shortage Crisis**
+Cryopreservation (freezing organs to $-196^\circ C$) offers a solution to the organ shortage crisis, but it fails due to **thermal stress**. Rapid cooling fractures the tissue, while slow cooling causes ice crystal damage. Traditional simulations (FEA/CFD) are too computationally expensive to guide real-time preservation protocols.
+
+### **The Solution: A Differentiable Digital Twin**
+This project implements a **Physics-Informed Neural Network (PINN)** that simulates the multi-physics of renal cryopreservation. Unlike standard AI that learns from data, this model learns from **Physical Laws** (the Pennes Bioheat Equation) to simulate heat transfer, blood perfusion, and phase change (freezing) in a complex 2D kidney geometry.
+
+---
+
+## 🧬 Key Scientific Advancements
+
+This is not a simple heat conduction model. It captures the **biological reality** of organ preservation:
+
+1.  **Non-Linear Phase Change (Latent Heat):** Implements the *Apparent Heat Capacity Method* to model the massive energy release when water turns to ice (the "Thermal Plateau").
+2.  **Pennes Bioheat Equation:** Includes a perfusion source term ($Q_{blood}$) that warms the tissue until freezing occurs, simulating real vasculature.
+3.  **Heterogeneous Anatomy:** Models the kidney as a **Functionally Graded Material**, where the vascular **Medulla** conducts heat differently than the outer **Cortex**.
+4.  **Complex Geometry:** Solves PDEs on a non-convex, procedural 2D "Bean" domain without mesh generation.
+5.  **Robin Boundary Conditions:** Simulates realistic convective cooling ($h(T - T_{\infty})$) via liquid nitrogen interaction.
+
+---
+
+## 🧠 System Architecture
+
+The model uses a **Deep Residual Network (ResNet)** with **SiLU** activations to solve the stiff differential equations.
+
+```mermaid
+graph LR
+    classDef purpleNode fill:#8e44ad,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef blueNode fill:#2c3e50,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef orangeNode fill:#d35400,stroke:#fff,stroke-width:4px,color:#fff;
+
+    A["Input (x, y, t)"]:::purpleNode --> B("ResNet PINN<br/>(4 Blocks, SiLU)"):::blueNode
+    B --> C["Predicted Temp (T)"]:::blueNode
+    
+    C --> D{"Auto Differentiation<br/>(PyTorch Autograd)"}:::blueNode
+    
+    D -->|"dT/dt"| E["Time Derivative"]:::blueNode
+    D -->|"Laplacian"| F["Spatial Derivative"]:::blueNode
+    
+    E & F --> G["Physics Residual<br/>(Pennes Bioheat + Phase Change)"]:::blueNode
+    G --> H(("Total Loss")):::orangeNode
+    
+    C -->|"Robin Boundary"| H
+    H -->|"Backprop"| B
+
+    linkStyle default stroke:#bdc3c7,stroke-width:2px,color:#fff;
+
+```
 👤 About the Author
 Vivek Pendem, Mechanical Engineer & Researcher | Focus: AI for Science & Bioprinting Working at the intersection of high-performance computing, thermodynamics, and biological preservation.
