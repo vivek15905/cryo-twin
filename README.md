@@ -98,7 +98,7 @@ This is not a simple heat conduction model. It captures the **biological reality
 2.  **Pennes Bioheat Equation:** Includes a perfusion source term ($Q_{blood}$) that warms the tissue until freezing occurs, simulating real vasculature.
 3.  **Heterogeneous Anatomy:** Models the kidney as a **Functionally Graded Material**, where the vascular **Medulla** conducts heat differently than the outer **Cortex**.
 4.  **Complex Geometry:** Solves PDEs on a non-convex, procedural 2D "Bean" domain without mesh generation.
-5.  **Robin Boundary Conditions:** Simulates realistic convective cooling ($\h(T - T_{\infty})$\) via liquid nitrogen interaction.
+5.  **Robin Boundary Conditions:** Simulates realistic convective cooling (h(T - T_{\infty})) via liquid nitrogen interaction.
 
 ---
 
