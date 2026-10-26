@@ -1,4 +1,4 @@
-# 🫀 In Silico Cryo-Twin: Physics-Informed Neural Networks for Organ Preservation
+#  In Silico Cryo-Twin: Physics-Informed Neural Networks for Organ Preservation
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0-orange)
@@ -11,7 +11,7 @@ Cryopreservation (freezing organs) is the "Holy Grail" of transplant medicine, b
 **This project builds a differentiable "Digital Twin" that learns the laws of thermodynamics.**
 Instead of using training data, this model uses a **Physics-Informed Neural Network (PINN)** to "reason" about heat transfer by minimizing the residual of the Heat Equation PDE. It allows for millisecond-level simulation of tissue temperature states, enabling real-time optimization of cooling protocols.
 
-[🚀 **View the Executable Notebook Here**](./Digital_twin_prototype.ipynb)
+[ **View the Executable Notebook Here**](./Digital_twin_prototype.ipynb)
 
 ---
 
@@ -75,7 +75,7 @@ graph LR
     style G fill:#2c3e50,stroke:#fff,stroke-width:2px,color:#fff
     style H fill:#d35400,stroke:#fff,stroke-width:4px,color:#fff
 ```
-# 🫀 In Silico Cryo-Twin: Heterogeneous Physics-Informed Neural Networks for Renal Cryopreservation
+#  In Silico Cryo-Twin: Heterogeneous Physics-Informed Neural Networks for Renal Cryopreservation
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0-orange)
@@ -102,7 +102,7 @@ This is not a simple heat conduction model. It captures the **biological reality
 
 ---
 
-## 🧠 System Architecture
+##  System Architecture
 
 The model uses a **Deep Residual Network (ResNet)** with **SiLU** activations to solve the stiff differential equations.
 
