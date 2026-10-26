@@ -90,7 +90,7 @@ This project implements a **Physics-Informed Neural Network (PINN)** that simula
 
 ---
 
-## 🧬 Key Scientific Advancements
+##  Key Scientific Advancements
 
 This is not a simple heat conduction model. It captures the **biological reality** of organ preservation:
 
@@ -132,5 +132,5 @@ graph LR
     linkStyle default stroke:lightgray,stroke-width:2px,color:white;
 ```
 
-👤 About the Author
+ About the Author
 Vivek Pendem, Mechanical Engineer & Researcher | Focus: AI for Science & Bioprinting Working at the intersection of high-performance computing, thermodynamics, and biological preservation.
